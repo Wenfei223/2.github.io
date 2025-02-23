@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天门行知中等职业技术学校の那些事</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Short+Stack&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ffb6c1;
+            --secondary-color: #87cefa;
+            --font-title: 'Comic Neue', cursive;
+            --font-content: 'Short Stack', cursive;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border: 3px dashed #fff;
+        }
+
+        h1 {
+            font-family: var(--font-title);
+            color: #ff69b4;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0 #fff;
+        }
+
+        .diary-content {
+            font-family: var(--font-content);
+            font-size: 1.2em;
+            color: #666;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="10" height="10"><text x="0" y="50" font-size="30" fill="%23ffd700">🐾</text></svg>');
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .magic-portal {
+            position: relative;
+            margin: 30px auto;
+            max-width: 300px;
+            perspective: 1000px;
+        }
+
+        .portal-button {
+            display: block;
+            padding: 15px 30px;
+            background: #ff99cc;
+            border-radius: 50px;
+            text-align: center;
+            font-family: var(--font-title);
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+            transition: all 0.3s;
+            position: relative;
+            z-index: 2;
+            border: 2px solid white;
+            text-decoration: none;
+        }
+
+        .portal-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,230,240,0.8) 0%, rgba(255,255,255,0) 70%);
+            transform: translate(-50%, -50%);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .sparkle {
+            display: inline-block;
+            animation: sparkle 1.5s linear infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 0.9; }
+        }
+
+        @keyframes sparkle {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2) rotate(20deg); }
+            100% { transform: scale(1); }
+        }
+
+        .portal-button:hover {
+            transform: scale(1.05) rotate(1deg);
+            background: linear-gradient(45deg, #ff99cc, #ffb3d9);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            margin-top: 30px;
+            border-radius: 10px;
+            font-family: var(--font-content);
+        }
+
+        a {
+            color: #ff69b4;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        a:hover {
+            color: #ff1493;
+            text-decoration: underline wavy;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .diary-content {
+                font-size: 1em;
+            }
+            .portal-button {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+        }
+
+        .decorative {
+            position: absolute;
+            opacity: 0.2;
+            z-index: -1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>天门行知中等职业技术学校の那些事 <iclass="fas fa-heart"></i></h1>
+        
+        <div class="diary-content">
+            <h2>📖 前言</h2>
+            <p>✨ 在这天门大开的校园内，教书育人的理想化身为一纸空文。老师不作为，任凭学生沉浸在游戏与烟酒之中；教官的威严如同虚幻，无法撼动懒散的心灵。主任以“诚信”为名，却让经济利益遮蔽了道德；校长则是沉默的同谋，眼睁睁看着教育的初衷沦为笑谈。如此一来，教育的结果不再是知识的传递，而是一场荒诞的神话，令人心寒。真正的教育，何以至此？...</p>
+        </div>
+
+        <div class="magic-portal">
+            <a href="https://3.WenTianPlay.com" class="portal-button">
+                <span class="sparkle">⭐</span>
+                下一页の探险之旅
+                <span class="sparkle">✨</span>
+            </a>
+            <div class="portal-glow"></div>
+        </div>
+
+        <div class="copyright">
+            © 2025 祖帝日记<br>
+            本网站与<a href="https://WenTianPlay.com">文天玩WenTianPlay</a>无任何所属关系<br>
+            文天玩仅提供二级域名分发
+        </div>
+    </div>
+
+    <div class="decorative" style="top:10%;left:5%">🍭</div>
+    <div class="decorative" style="top:30%;right:8%">🎀</div>
+    <div class="decorative" style="top:70%;left:15%">🐾</div>
+</body>
+</html>
