@@ -1,5 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+<script>
+document.addEventListener('keydown', function(e) {
+    // 禁用F12
+    if (e.key === 'F12') {
+        e.preventDefault();
+    }
+    // 禁用Ctrl + C（复制）
+    if (e.ctrlKey && e.key === 'c') {
+        e.preventDefault();
+    }
+body {
+    user-select: none; /* 针对大部分现代浏览器 */
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE和Edge */
+}
+});
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
