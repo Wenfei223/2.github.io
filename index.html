@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<script>
-document.addEventListener('keydown', function(e) {
-    // 禁用F12
-    if (e.key === 'F12') {
-        e.preventDefault();
-    }
-    // 禁用Ctrl + C（复制）
-    if (e.ctrlKey && e.key === 'c') {
-        e.preventDefault();
-    }
-body {
-    user-select: none; /* 针对大部分现代浏览器 */
-    -moz-user-select: none; /* Firefox */
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE和Edge */
-}
-});
-</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>天门行知中等职业技术学校の那些事</title>
+    <meta name="description" content="祖帝的可爱日记本，记录日常点滴与冒险故事">
+    <meta name="keywords" content="日记, 祖帝, 可爱, 冒险">
+    <!-- 字体预加载优化 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Short+Stack&display=swap" rel="stylesheet">
+    <!-- Font Awesome 优化 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>🐻❄️祖帝の日记</title>
     <style>
+        /* CSS变量管理 */
         :root {
             --primary-color: #ffb6c1;
             --secondary-color: #87cefa;
             --font-title: 'Comic Neue', cursive;
             --font-content: 'Short Stack', cursive;
+            --portal-glow: radial-gradient(circle, rgba(255,230,240,0.8) 0%, rgba(255,255,255,0) 70%);
+            --transition-time: 0.3s;
         }
 
+        /* 基础样式 */
         body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             min-height: 100vh;
             padding: 20px;
-            position: relative;
             line-height: 1.6;
+            position: relative;
+            font-family: var(--font-content);
         }
 
+        /* 容器动画 */
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -48,19 +46,23 @@ body {
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border: 3px dashed #fff;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+            will-change: transform, opacity;
         }
 
+        /* 标题样式 */
         h1 {
             font-family: var(--font-title);
             color: #ff69b4;
             text-align: center;
-            font-size: 2.5em;
+            font-size: clamp(2rem, 5vw, 2.5rem);
             margin-bottom: 20px;
             text-shadow: 2px 2px 0 #fff;
         }
 
+        /* 日记内容区域 */
         .diary-content {
-            font-family: var(--font-content);
             font-size: 1.2em;
             color: #666;
             background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="10" height="10"><text x="0" y="50" font-size="30" fill="%23ffd700">🐾</text></svg>');
@@ -69,6 +71,7 @@ body {
             margin-bottom: 25px;
         }
 
+        /* 魔法传送门样式 */
         .magic-portal {
             position: relative;
             margin: 30px auto;
@@ -86,27 +89,19 @@ body {
             color: white;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
             box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
-            transition: all 0.3s;
+            transition: all var(--transition-time);
             position: relative;
             z-index: 2;
             border: 2px solid white;
             text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
 
-        .portal-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255,230,240,0.8) 0%, rgba(255,255,255,0) 70%);
-            transform: translate(-50%, -50%);
-            animation: glow 2s ease-in-out infinite;
-        }
-
-        .sparkle {
-            display: inline-block;
-            animation: sparkle 1.5s linear infinite;
+        /* 动画效果 */
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(20px); }
         }
 
         @keyframes glow {
@@ -114,45 +109,16 @@ body {
             50% { opacity: 0.9; }
         }
 
-        @keyframes sparkle {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2) rotate(20deg); }
-            100% { transform: scale(1); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
-        .portal-button:hover {
-            transform: scale(1.05) rotate(1deg);
-            background: linear-gradient(45deg, #ff99cc, #ffb3d9);
-            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.5);
-        }
-
-        .copyright {
-            text-align: center;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            margin-top: 30px;
-            border-radius: 10px;
-            font-family: var(--font-content);
-        }
-
-        a {
-            color: #ff69b4;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        a:hover {
-            color: #ff1493;
-            text-decoration: underline wavy;
-        }
-
+        /* 响应式设计 */
         @media (max-width: 768px) {
             .container {
                 width: 95%;
                 padding: 15px;
-            }
-            h1 {
-                font-size: 2em;
             }
             .diary-content {
                 font-size: 1em;
@@ -163,30 +129,27 @@ body {
             }
         }
 
-        .decorative {
-            position: absolute;
-            opacity: 0.2;
-            z-index: -1;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>天门行知中等职业技术学校の那些事 <iclass="fas fa-heart"></i></h1>
+        <h1>🍼祖帝の日记 <i class="fas fa-heart"></i></h1>
         
         <div class="diary-content">
             <h2>📖 前言</h2>
-            <p>✨ 在这天门大开的校园内，教书育人的理想化身为一纸空文。老师不作为，任凭学生沉浸在游戏与烟酒之中；教官的威严如同虚幻，无法撼动懒散的心灵。主任以“诚信”为名，却让经济利益遮蔽了道德；校长则是沉默的同谋，眼睁睁看着教育的初衷沦为笑谈。如此一来，教育的结果不再是知识的传递，而是一场荒诞的神话，令人心寒。真正的教育，何以至此？...</p>
+            <p>✨ 发生了任何的事情！...</p>
+            <p>🌸 我都会在这里分享...</p>
+            <p>🎈 无论是什么的事情！☁️</p>
         </div>
 
         <div class="magic-portal">
-            <a href="https://3.WenTianPlay.com" class="portal-button">
+            <a href="https://1.WenTianPlay.com" class="portal-button">
                 <span class="sparkle">⭐</span>
                 下一页の探险之旅
                 <span class="sparkle">✨</span>
@@ -204,5 +167,45 @@ body {
     <div class="decorative" style="top:10%;left:5%">🍭</div>
     <div class="decorative" style="top:30%;right:8%">🎀</div>
     <div class="decorative" style="top:70%;left:15%">🐾</div>
+
+    <script>
+        // 安全保护与功能优化
+        (function() {
+            'use strict';
+
+            // 安全事件处理器
+            const securityHandler = (e) => {
+                const forbiddenKeys = new Set(['F12', 'I', 'U', 'c', 'C']);
+                const isDevToolsShortcut = (e.ctrlKey && e.shiftKey && forbiddenKeys.has(e.key)) ||
+                                         (e.ctrlKey && forbiddenKeys.has(e.key)) ||
+                                         e.key === 'F12';
+
+                if (isDevToolsShortcut) {
+                    e.preventDefault();
+                    return false;
+                }
+            };
+
+            // 事件监听器注册
+            const addEvent = (type, handler) => {
+                document.addEventListener(type, handler, { passive: false });
+            };
+
+            // 初始化安全保护
+            addEvent('keydown', securityHandler);
+            addEvent('contextmenu', (e) => e.preventDefault());
+            addEvent('copy', (e) => e.preventDefault());
+            addEvent('cut', (e) => e.preventDefault());
+
+            // 渐进增强功能
+            try {
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('/sw.js');
+                }
+            } catch (error) {
+                console.log('Service Worker 注册失败:', error);
+            }
+        })();
+    </script>
 </body>
 </html>
